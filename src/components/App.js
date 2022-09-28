@@ -4,6 +4,7 @@ import styled from 'styled-components';
 import Body from './body';
 import Footer from './footer';
 import Header from './header';
+import StartGame from './startGame';
 
 export default function App() {
     const deck = {
@@ -30,15 +31,24 @@ export default function App() {
     }
 
     const [answered, setAnswered] = useState(0);
+    const [start, setStart] = useState(false);
+    const [zaps, setZaps] = useState(false);
+    const [correctAnswers, setCorrectAnswers] = useState(0);
 
     return (
         <>
             <GlobalStyle />
-            <Deck>
-                <Header />
-                <Body deck={deck} answered={answered} setAnswered={setAnswered}/>
-            </Deck>
-            <Footer deck={deck} answered={answered}/>
+            {start ? (
+                <>
+                    <Deck>
+                        <Header />
+                        <Body deck={deck} answered={answered} setAnswered={setAnswered} zaps={zaps} correctAnswers={correctAnswers} setCorrectAnswers={setCorrectAnswers}/>
+                    </Deck>
+                    <Footer deck={deck} answered={answered}/>
+                </>
+            ) : (
+                <StartGame setStart={setStart} zaps={zaps} setZaps={setZaps}/>
+            )}
         </>
     )
 }

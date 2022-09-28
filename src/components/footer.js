@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
-export default function Footer(props){
-    const questions = props.deck.react.length;
-    const answered = props.answered;
+export default function Footer({deck, answered, zaps}){
+    const questions = deck.react.length;
 
     return (
         <AnswerArea>

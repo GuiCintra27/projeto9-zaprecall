@@ -4,15 +4,12 @@ import playIcon from "../assets/img/play-outline-icon.svg";
 import rotateIcon from "../assets/img/rotateIcon.svg";
 import correctIcon from "../assets/img/checkmark-circle-icon.svg";
 import helpIcon from "../assets/img/help-circle-icon.svg";
-import incorrectIcon from "../assets/img/close-circle-icon.svg"
+import incorrectIcon from "../assets/img/close-circle-icon.svg";
 
 
 
-export default function FlashCard(props) {
-  const cardQuestion = props.question;
-  const cardAnswer = props.answer;
-  const answered = props.answered;
-  const setAnswered = props.setAnswered;
+export default function FlashCard({quest, answer, answered, setAnswered, index, zaps, correctAnswers, setCorrectAnswers}) {
+  const cardQuestion = quest;
 
   const [answeredQuestion, setAnsweredQuestion] = useState(['--preto', '']);
   const [isOpen, setIsOpen] = useState(false);
@@ -25,8 +22,8 @@ export default function FlashCard(props) {
   }
 
   function Answer() {
-    if (question !== cardAnswer) {
-      setQuestion(cardAnswer);
+    if (question !== answer) {
+      setQuestion(answer);
     } else {
       setQuestion(cardQuestion);
     }
@@ -44,14 +41,22 @@ export default function FlashCard(props) {
     }else if(answer === 'effort'){
       setIcon(helpIcon);
     }else{
+      if(zaps == correctAnswers + 1){
+        alert('parabens!');
+      }
+      setCorrectAnswers(correctAnswers + 1);
       setIcon(correctIcon);
+    }
+
+    if(zaps > correctAnswers && answered + 1 === 8){
+      alert('perdeu!');
     }
   }
 
   return (
     <Card color={answeredQuestion[0]} decoration={answeredQuestion[1]} className={isOpen ? 'open' : ''} onClick={isDisable ? undefined : (isOpen ? undefined : Open)}>
-      <p>{isOpen ? question : `Pergunta ${props.index + 1}`}</p>
-      {question === cardAnswer ? (
+      <p>{isOpen ? question : `Pergunta ${index + 1}`}</p>
+      {question === answer ? (
         <Action>
           <Button bgColor='--cor-nao-lembrei' onClick={() => Answered('--cor-nao-lembrei', 'forgot')}>Não lembrei</Button>
           <Button bgColor='--cor-quase-nao-lembrei' onClick={() => Answered('--cor-quase-nao-lembrei', 'effort')}>Quase não lembrei</Button>
