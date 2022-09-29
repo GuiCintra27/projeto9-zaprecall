@@ -122,4 +122,13 @@ const decks = [
     ]
 ];
 
-export default decks;
+const deckType = [
+    { option: 'React'},
+    { option: 'Percy Jackson'},
+    { option: 'Mitologia Grega'},
+    { option: 'Pokémon'}
+];
+
+const gameData = [decks, deckType];
+
+export default gameData;

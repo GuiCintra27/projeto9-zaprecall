@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export default function Footer({deck, answered, zaps}){
+export default function Footer({deck, answered}){
     const questions = deck.length;
 
     return (
@@ -14,7 +14,6 @@ const AnswerArea = styled.div `
     position: fixed;
     bottom: 0;
     left: 0;
-    right: 0;
     background-color: white;
     z-index: 1;
     width: 100%;
@@ -24,7 +23,5 @@ const AnswerArea = styled.div `
     color: black;
     position: fixed;
     text-align: center;
-    display: flex;
-    flex-direction: column;
     gap: 20px;
 `
