@@ -9,9 +9,9 @@ import gameData from './decks';
 export default function App() {
     const decks = gameData[0], deckType = gameData[1];
     const [answered, setAnswered] = useState(0);
-    const [start, setStart] = useState(true);
-    const [zaps, setZaps] = useState(5);
-    const [deck, setDeck] = useState(1);
+    const [start, setStart] = useState(false);
+    const [zaps, setZaps] = useState(0);
+    const [deck, setDeck] = useState('');
 
     return (
         <>

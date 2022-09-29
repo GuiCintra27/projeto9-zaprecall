@@ -31,7 +31,7 @@ export default function FlashCard({quest, answer, answered, setAnswered, index, 
       setIcon(helpIcon);
     }else{
       if(zaps === correctAnswers + 1){
-        alert('parabens!');
+        alert('Parabens, você atingiu sua meta de zaps!');
       }
       correct ++
       setCorrectAnswers(correctAnswers + 1);
