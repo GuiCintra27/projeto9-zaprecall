@@ -1,9 +1,9 @@
 import logo from "../assets/img/logo.svg";
 import styled from "styled-components";
 
-export default function StartGame({setStart, zaps, setZaps}) {
-    function startGame(){
-        if (zaps !== '' && zaps !== null && zaps > 0 ){
+export default function StartGame({setStart, zaps, setZaps, deck, deckType, setDeck }) {
+    function startGame() {
+        if (zaps !== '' && zaps !== null && zaps > 0 && deck !== '') {
             setStart(true);
         }
     }
@@ -12,8 +12,14 @@ export default function StartGame({setStart, zaps, setZaps}) {
         <HomePage>
             <img src={logo} alt="Logo ZapRecall" />
             <h1>ZapRecall</h1>
-            <input onChange={(e) => setZaps(e.target.value)} placeholder="Digite sua meta de zaps..."/>
-            <button className={zaps ? '' : 'disabled'} disabled={zaps ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
+            <select onChange={(e) => setDeck(e.target.value)}>
+                <option selected disabled value=''>Selecione</option>
+                {deckType.map((item, index) => (
+                    <option value={index}>{item.option}</option>
+                ))}
+            </select>
+            <input onChange={(e) => setZaps(e.target.value)} placeholder="Digite sua meta de zaps..." />
+            <button className={zaps && deck !== '' ? '' : 'disabled'} disabled={zaps && deck !== '' ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
         </HomePage>
     )
 }
@@ -44,7 +50,7 @@ const HomePage = styled.div`
         margin-bottom: 3rem;
     }
 
-    input{
+    input, select{
         margin-bottom: 1.5rem;
         width: 246px;
         height: 43px;
