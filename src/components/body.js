@@ -9,7 +9,7 @@ export default function Body({ deck, answered, setAnswered, zaps }) {
     return (
         <Main>
             {deck.map((item, index) => (
-                <FlashCard key={index} quest={item.question} answer={item.answer} index={index} answered={answered} zaps={zaps} setAnswered={setAnswered} correctAnswers={correctAnswers} setCorrectAnswers={setCorrectAnswers} length={deck.length} loseGame={loseGame} setLoseGame={setLoseGame}/>
+                <FlashCard data-identifier="flashcard" key={index} quest={item.question} answer={item.answer} index={index} answered={answered} zaps={zaps} setAnswered={setAnswered} correctAnswers={correctAnswers} setCorrectAnswers={setCorrectAnswers} length={deck.length} loseGame={loseGame} setLoseGame={setLoseGame}/>
             ))}
         </Main>
     )

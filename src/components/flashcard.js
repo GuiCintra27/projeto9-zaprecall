@@ -42,20 +42,20 @@ export default function FlashCard({quest, answer, answered, setAnswered, index, 
   }
 
   return (
-    <Card color={cardStyle[0]} decoration={cardStyle[1]} className={isOpen ? 'open' : ''} onClick={isDisable ? undefined : (isOpen ? undefined : Open)}>
-      <p>{isOpen ? question : `Pergunta ${index + 1}`}</p>
+    <Card data-identifier="flashcard-show-btn" color={cardStyle[0]} decoration={cardStyle[1]} className={isOpen ? 'open' : ''} onClick={isDisable ? undefined : (isOpen ? undefined : Open)}>
+      <p data-identifier="flashcard-index-item">{isOpen ? question : `Pergunta ${index + 1}`}</p>
       {question === answer ? (
         <Action>
-          <Button bgColor='--cor-nao-lembrei' onClick={() => Answered('--cor-nao-lembrei', 'forgot')}>Não lembrei</Button>
-          <Button bgColor='--cor-quase-nao-lembrei' onClick={() => Answered('--cor-quase-nao-lembrei', 'effort')}>Quase não lembrei</Button>
-          <Button bgColor='--cor-zap' onClick={() => Answered('--cor-zap', 'remembered')}>Zap!</Button>
+          <Button data-identifier="forgot-btn" bgColor='--cor-nao-lembrei' onClick={() => Answered('--cor-nao-lembrei', 'forgot')}>Não lembrei</Button>
+          <Button data-identifier="almost-forgot-btn" bgColor='--cor-quase-nao-lembrei' onClick={() => Answered('--cor-quase-nao-lembrei', 'effort')}>Quase não lembrei</Button>
+          <Button data-identifier="zap-btn" bgColor='--cor-zap' onClick={() => Answered('--cor-zap', 'remembered')}>Zap!</Button>
         </Action>
       ) : (
         
         isOpen ? 
-        <img src={rotateIcon} alt='icon' onClick={() => setQuestion(answer)} /> 
+        <img data-identifier="flashcard-counter" src={rotateIcon} alt='icon' onClick={() => setQuestion(answer)} /> 
         :
-        <ion-icon name={icon}></ion-icon>
+        <ion-icon data-identifier="flashcard-status" name={icon}></ion-icon>
       )}
     </Card>
   )

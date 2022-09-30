@@ -12,14 +12,14 @@ export default function StartGame({setStart, zaps, setZaps, deckType, deck, setD
         <HomePage>
             <img src={logo} alt="Logo ZapRecall" />
             <h1>ZapRecall</h1>
-            <select onChange={(e) => setDeck(e.target.value)}>
-                <option selected disabled value=''>Selecione o seu deck</option>
+            <select data-identifier="deck-selector" onChange={(e) => setDeck(e.target.value)}>
+                <option data-identifier="deck-option"  selected disabled value=''>Selecione o seu deck</option>
                 {deckType.map((item, index) => (
-                    <option key={index} value={index}>{item.option}</option>
+                    <option key={index} data-identifier="deck-option" value={index}>{item.option}</option>
                 ))}
             </select>
-            <input type='Number' onChange={(e) => setZaps(Number(e.target.value))} placeholder="Digite sua meta de zaps..." />
-            <button className={zaps && deck !== '' ? undefined : 'disabled'} disabled={zaps && deck !== '' ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
+            <input data-identifier="goals-input" type='Number' onChange={(e) => setZaps(Number(e.target.value))} placeholder="Digite sua meta de zaps..." />
+            <button data-identifier="start-btn" className={zaps && deck !== '' ? undefined : 'disabled'} disabled={zaps && deck !== '' ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
         </HomePage>
     )
 }
