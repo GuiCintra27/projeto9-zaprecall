@@ -1,10 +1,7 @@
 import { useState } from "react";
 import styled from "styled-components";
-import playIcon from "../assets/img/play-outline-icon.svg";
 import rotateIcon from "../assets/img/rotateIcon.svg";
-import correctIcon from "../assets/img/checkmark-circle-icon.svg";
-import helpIcon from "../assets/img/help-circle-icon.svg";
-import incorrectIcon from "../assets/img/close-circle-icon.svg";
+const playIcon = 'play-outline', correctIcon = 'checkmark-circle', helpIcon = 'help-circle', incorrectIcon = 'close-circle';
 
 export default function FlashCard({quest, answer, answered, setAnswered, index, zaps, correctAnswers, setCorrectAnswers, length, loseGame, setLoseGame}) {
   const [cardStyle, setCardStyle] = useState(['--preto', '']);
@@ -54,7 +51,11 @@ export default function FlashCard({quest, answer, answered, setAnswered, index, 
           <Button bgColor='--cor-zap' onClick={() => Answered('--cor-zap', 'remembered')}>Zap!</Button>
         </Action>
       ) : (
-        <Image src={isOpen ? rotateIcon : icon} alt='icon' onClick={isOpen ? () => setQuestion(answer) : undefined} />
+        
+        isOpen ? 
+        <img src={rotateIcon} alt='icon' onClick={() => setQuestion(answer)} /> 
+        :
+        <ion-icon name={icon}></ion-icon>
       )}
     </Card>
   )
@@ -97,11 +98,12 @@ const Card = styled.div`
       right: .5rem;
     }
   }
-`
 
-const Image = styled.img`
-  height: 23px;
-  color: var(${props => props.color});
+  ion-icon, img{
+    height: 23px;
+    font-size: 23px;
+    color: var(${props => props.color});
+  }
 `
 
 const Action = styled.div`

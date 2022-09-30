@@ -15,7 +15,7 @@ export default function StartGame({setStart, zaps, setZaps, deckType, deck, setD
             <select onChange={(e) => setDeck(e.target.value)}>
                 <option selected disabled value=''>Selecione o seu deck</option>
                 {deckType.map((item, index) => (
-                    <option value={index}>{item.option}</option>
+                    <option key={index} value={index}>{item.option}</option>
                 ))}
             </select>
             <input type='Number' onChange={(e) => setZaps(Number(e.target.value))} placeholder="Digite sua meta de zaps..." />
