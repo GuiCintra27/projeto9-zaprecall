@@ -68,31 +68,31 @@ const decks = [
         }
     ], [
         {
-            question: "Qual foi a punição que Hércules recebeu por assasinar a própria esposa?", 
+            question: "Qual foi a punição que Hércules recebeu por assasinar a própria esposa?",
             answer: "Realizar 12 difíceis"},
         {
-            question: "Quem decifrou o enigma da esfinge?", 
+            question: "Quem decifrou o enigma da esfinge?",
             answer: "Édipo"},
         {
-            question: "Quem decapitou a Medusa?", 
+            question: "Quem decapitou a Medusa?",
             answer: "Perseu, filho de Zeus"},
         {
-            question: "Qual é o deus do Sol?", 
+            question: "Qual é o deus do Sol?",
             answer: "Apolo"},
         {
-            question: "Qual é o deus do prazer?", 
+            question: "Qual é o deus do prazer?",
             answer: "Dionísio"},
         {
-            question: "Qual é a deusa da beleza e do amor?", 
+            question: "Qual é a deusa da beleza e do amor?",
             answer: "Afrodite"},
         {
-            question: "Qual é o deus do submundo?", 
+            question: "Qual é o deus do submundo?",
             answer: "Hades"},
         {
-            question: "Qual é o deus do deuses?", 
+            question: "Qual é o deus do deuses?",
             answer: "Zeus"},
         {
-            question: "Bônus: Quem deitou o Zeus na porrada", 
+            question: "Bônus: Quem deitou o Zeus na porrada",
             answer: "Kratos, O bom de guerra!"}
     ], [
         {
@@ -118,7 +118,7 @@ const decks = [
             answer: "Charmander"},
         {
             question: "Quem é considerado o deus pokémon?",
-            answer: "Arceus"} 
+            answer: "Arceus"}
     ]
 ];
 

@@ -19,9 +19,9 @@ export default function StartGame({setStart, zaps, setZaps, deckType, deck, setD
                 ))}
             </select>
             <input data-identifier="goals-input" type='Number' onChange={(e) => setZaps(Number(e.target.value))} placeholder="Digite sua meta de zaps..." />
-            <button data-identifier="start-btn" className={zaps && deck !== '' ? undefined : 'disabled'} disabled={zaps && deck !== '' ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
+            <button data-identifier="start-btn" className={zaps > 0 && deck !== '' ? undefined : 'disabled'} disabled={zaps && deck !== '' ? undefined : 'disabled'} onClick={startGame}>Iniciar Recall!</button>
         </HomePage>
-    )
+    );
 }
 
 const HomePage = styled.div`
@@ -83,4 +83,4 @@ const HomePage = styled.div`
             border: none;
         }
     }
-`
+`;

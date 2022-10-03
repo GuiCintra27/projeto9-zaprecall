@@ -51,14 +51,13 @@ export default function FlashCard({quest, answer, answered, setAnswered, index, 
           <Button data-identifier="zap-btn" bgColor='--cor-zap' onClick={() => Answered('--cor-zap', 'remembered')}>Zap!</Button>
         </Action>
       ) : (
-        
-        isOpen ? 
-        <img data-identifier="flashcard-counter" src={rotateIcon} alt='icon' onClick={() => setQuestion(answer)} /> 
+        isOpen ?
+        <img data-identifier="flashcard-counter" src={rotateIcon} alt='icon' onClick={() => setQuestion(answer)} />
         :
         <ion-icon data-identifier="flashcard-status" name={icon}></ion-icon>
       )}
     </Card>
-  )
+  );
 }
 
 const Card = styled.div`
@@ -104,7 +103,7 @@ const Card = styled.div`
     font-size: 23px;
     color: var(${props => props.color});
   }
-`
+`;
 
 const Action = styled.div`
   position: absolute;
@@ -114,7 +113,7 @@ const Action = styled.div`
   justify-content: space-around;
   align-items: center;
   gap: 10px;
-`
+`;
 
 const Button = styled.button`
   width: 100%;
@@ -133,4 +132,4 @@ const Button = styled.button`
   &:hover, &:focus{
       filter: brightness(0.7);
   }
-`
+`;

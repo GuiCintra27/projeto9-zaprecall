@@ -1,4 +1,4 @@
-import styled from "styled-components"
+import styled from "styled-components";
 import logo from '../assets/img/SmallLogo.svg';
 
 export default function Header() {
@@ -7,7 +7,7 @@ export default function Header() {
             <img src={logo} alt="teste"/>
             <p>ZapRecall</p>
         </ZapHeader>
-    )
+    );
 }
 
 const ZapHeader = styled.div`
@@ -31,4 +31,4 @@ const ZapHeader = styled.div`
         width: 52px;
         height: 60px;
     }
-`
+`;

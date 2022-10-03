@@ -26,5 +26,5 @@ export default function App() {
                 <StartGame setStart={setStart} zaps={zaps} setZaps={setZaps} deckType={deckType} deck={deck} setDeck={setDeck}/>
             )}
         </>
-    )
+    );
 }

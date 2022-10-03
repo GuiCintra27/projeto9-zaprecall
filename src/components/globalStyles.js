@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components'
+import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
   * {
@@ -39,6 +39,6 @@ const GlobalStyle = createGlobalStyle`
     background: var(--cor-fundo);
     /* font-family: 'Righteous', cursive; */
   }
-`
+`;
 
 export default GlobalStyle;

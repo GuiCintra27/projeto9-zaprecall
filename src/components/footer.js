@@ -7,7 +7,7 @@ export default function Footer({deck, answered}){
         <AnswerArea>
             <p>{answered}/{questions} CONCLUÍDOS</p>
         </AnswerArea>
-    )
+    );
 }
 
 const AnswerArea = styled.div `
@@ -24,4 +24,4 @@ const AnswerArea = styled.div `
     position: fixed;
     text-align: center;
     gap: 20px;
-`
+`;
